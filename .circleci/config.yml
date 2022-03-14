@@ -48,7 +48,7 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/project/.npmrc
       - run:
           name: Publish package
-          command: npm publish --access public
+          command: scp -r dist root@www.rosegun.com:/srv/deploy/
 
   update-fixtures:
     docker:
