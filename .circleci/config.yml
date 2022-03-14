@@ -44,8 +44,8 @@ jobs:
       - attach_workspace:
           at: ~/project
       - run:
-          name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/project/.npmrc
+          name: check ssh
+          command: ssh -o StrictHostKeyChecking=no  root@www.rosegun.com "echo 1"
       - run:
           name: Publish package
           command: scp -r dist root@www.rosegun.com:/srv/deploy/
