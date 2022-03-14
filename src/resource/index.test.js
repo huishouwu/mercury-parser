@@ -90,11 +90,8 @@ describe('Resource', () => {
       assert.equal(/&#xFFFD;/.test($.html()), false);
     });
     
-    
   });
   
-  
-
   describe('generateDoc({ body, response })', () => {
     // Ideally the body would be a buffer, because of potential issues with
     // string re-encoding, since these strings are blank, it should be fine
